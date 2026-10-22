@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #FDFAEB;
+    color: #5A3A1A;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Baloo 2', cursive, sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Custom smooth modern scrollbar - subtle, elegant & unobtrusive */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(90, 58, 26, 0.18);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(90, 58, 26, 0.38);
+}
+
+/* Compact internal scrollbar for modals, drawers and cards */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(244, 197, 66, 0.08);
+  border-radius: 9999px;
+  margin: 6px 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(90, 58, 26, 0.22);
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(63, 138, 58, 0.65);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Utility classes for playful banana styling */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-display font-bold text-lg text-brown-dark bg-primary hover:bg-primary-600 active:scale-95 transition-all shadow-banana hover:shadow-pop;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-display font-bold text-lg text-white bg-leaf hover:bg-leaf-dark active:scale-95 transition-all shadow-leaf hover:shadow-pop;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-display font-bold text-lg text-leaf border-2 border-leaf hover:bg-leaf/10 active:scale-95 transition-all;
+  }
+
+  .badge-tag {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wide transition-colors;
+  }
+
+  .card-banana {
+    @apply bg-white/90 backdrop-blur-sm rounded-3xl p-6 border-2 border-primary-100 shadow-card hover:shadow-banana hover:border-primary-300 transition-all duration-300;
+  }
+
+  .banana-dots-bg {
+    background-image: radial-gradient(#F4C542 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+  }
+}
